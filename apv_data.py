@@ -2,6 +2,7 @@ import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 import warnings
 
+
 class ApvData:
     def __init__(self, apv_1_file, apv_2_file):
         self.apv_1_file = apv_1_file
