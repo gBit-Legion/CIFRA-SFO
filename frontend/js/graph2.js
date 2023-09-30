@@ -107,23 +107,7 @@ plotOptions: {
 
 series: [{
     name: '',
-    data: async function requestData() {
-        const result = await fetch("26.149.55.96");
-        if (result.ok) {
-          const data = await result.json();
-          console.log(data)
-          const objJson = JSON.stringify(data);
-          const name = JSON.parse(objJson).cpuCount
-          console.log(objJson)
-
-          const point = [(new Date()).getTime(), name];
-          const series = chart.series[0],
-            shift = series.data.length > 20; // shift if the series is longer than 20
-
-          // add the point
-          chart.series[0].addPoint(point, true, shift);
-        }
-      },
+    data: averages,
     zIndex: 1,
     marker: {
         fillColor: 'white',
@@ -132,23 +116,7 @@ series: [{
     }
 }, {
     name: '',
-    data: async function requestData() {
-        const result = await fetch("http://127.0.0.1:8000/cpu_count/");
-        if (result.ok) {
-          const data = await result.json();
-          console.log(data)
-          const objJson = JSON.stringify(data);
-          const name = JSON.parse(objJson).cpuCount
-          console.log(objJson)
-
-          const point = [(new Date()).getTime(), name];
-          const series = chart.series[0],
-            shift = series.data.length > 20; // shift if the series is longer than 20
-
-          // add the point
-          chart.series[0].addPoint(point, true, shift);
-        }
-      },
+    data: ranges,
     type: 'arearange',
     lineWidth: 0,
     linkedTo: ':previous',
