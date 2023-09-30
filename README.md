@@ -44,7 +44,9 @@ https://github.com/gBit-Legion/CIFRA-SFO.git
 Вам нужно будет запускать эти команды из каталога проекта каждый раз, когда вы загружаете новую копию. В окне терминала cd перейдите в каталог проекта и запустите:
 
 python -m venv venv
+
 venv\Scripts\activate
+
 pip install -r requirements.txt
 
 
